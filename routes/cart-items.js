@@ -6,7 +6,7 @@ const carts = express.Router();
 carts.get("/", (req, res) => {
     console.log("Get is working");
     // res.json({data: req.body});
-    res.json({cartsData});
+    res.json({data:cartsData});
 });
 
 // creates a new item
