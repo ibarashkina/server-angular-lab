@@ -4,22 +4,23 @@ const carts = express.Router();
 
 
 carts.get("/", (req, res) => {
-    console.log("Get is working");
+    console.log(req.body);
     // res.json({data: req.body});
     res.json({data:cartsData});
 });
 
 // creates a new item
 carts.post('/', (req,res) => {
-    console.log(req.body.name);
-    res.send(cartsData);
+    const newItem = req.body.name.toUpperCase();
+    console.log(req.body); 
+    res.json({data:cartsData});
 });
 
 // updates a specific item based on id
 
 carts.put('/:id', (req,res) => {
-    console.log(req.params.id);
-    res.send("Put is working.");;
+    console.log(req.param.id);
+    res.json({ data:newItem });
 });
 
 // deletes a specific item based on id
